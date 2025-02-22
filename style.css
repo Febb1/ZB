@@ -153,3 +153,183 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(-25%); }
 }
+
+
+
+
+
+/* Stile per il menu sticky */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Trasparente con sfondo scuro */
+    padding: 10px 0;
+    z-index: 1000; /* Per assicurarsi che il menu resti sopra gli altri contenuti */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row; /* Rende il menu orizzontale */
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background-color 2s;
+}
+
+.navbar a:hover {
+    background-color: rgb(153, 255, 63);
+}
+
+/* Altri stili per la tua landing page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradiente che sfuma dal nero a trasparente */
+.gradient-overlay {
+    position: absolute;
+    bottom: 0; /* Posiziona il gradiente sotto il video */
+    left: 0;
+    width: 100%;
+    height: 50%; /* Più grande per una sfumatura più graduale */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(142, 142, 142)); /* Gradiente dal trasparente al nero */
+    z-index: 2; /* Sovrappone il gradiente sopra il video */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(153, 255, 63);
+    font-size: 80px;
+    text-align: center;
+    z-index: 3;
+}
+
+.text-big {
+    font-size: 120px;
+    transition: opacity 2s ease-in-out; /* Transizione fluida */
+}
+
+.text-big:hover {
+    opacity: 0.5; /* Riduce l'opacità al passaggio del mouse */
+}
+
+/* Stile per la galleria */
+.gallery-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+/* Slider Container */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Slider Track */
+.slider {
+    display: flex;
+    width: 200%; /* Twice the number of images to make a loop */
+    animation: slide 12s linear infinite;
+}
+
+/* Slider Images */
+.slider img {
+    width: 25%; /* Adjust based on how many images you have */
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* Keyframes for Sliding Effect */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    /* Menu */
+    .navbar ul {
+        flex-direction: column; /* Disposizione verticale */
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    /* Testo del video */
+    .overlay-text {
+        font-size: 50px; /* Riduce la dimensione del testo */
+        top: 40%;
+    }
+
+    /* Galleria */
+    .slider img {
+        width: 50%; /* Riduce la larghezza delle immagini */
+    }
+
+    .gallery-section {
+        padding: 30px 0;
+    }
+
+    /* Video */
+    #video {
+        height: 60vh; /* Riduce l'altezza del video su dispositivi piccoli */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Riduzione della dimensione del testo nel menu */
+    .navbar a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Testo ancora più piccolo nel video */
+    .overlay-text {
+        font-size: 40px;
+    }
+
+    /* Immagini della galleria su schermi molto piccoli */
+    .slider img {
+        width: 100%; /* Le immagini occupano tutta la larghezza */
+    }
+
+    /* Video ancora più piccolo */
+    #video {
+        height: 50vh;
+    }
+}
