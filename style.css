@@ -1,0 +1,121 @@
+/* Stile per il menu sticky */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Trasparente con sfondo scuro */
+    padding: 10px 0;
+    z-index: 1000; /* Per assicurarsi che il menu resti sopra gli altri contenuti */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row; /* Rende il menu orizzontale */
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background-color 2s;
+}
+
+.navbar a:hover {
+    background-color: rgb(153, 255, 63);
+}
+
+/* Altri stili per la tua landing page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradiente che sfuma dal nero a trasparente */
+.gradient-overlay {
+    position: absolute;
+    bottom: 0; /* Posiziona il gradiente sotto il video */
+    left: 0;
+    width: 100%;
+    height: 50%; /* Più grande per una sfumatura più graduale */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(142, 142, 142)); /* Gradiente dal trasparente al nero */
+    z-index: 2; /* Sovrappone il gradiente sopra il video */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(153, 255, 63);
+    font-size: 80px;
+    text-align: center;
+    z-index: 3;
+}
+
+.text-big {
+    font-size: 120px;
+    transition: opacity 2s ease-in-out; /* Transizione fluida */
+}
+
+.text-big:hover {
+    opacity: 0.5; /* Riduce l'opacità al passaggio del mouse */
+}
+
+
+/* Stile per il footer */
+.footer {
+    background-color: rgb(142, 142, 142);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 100;
+    width: 100%;
+
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 0 10px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: rgb(153, 255, 63);
+    border-radius: 5px;
+}
+
