@@ -37,7 +37,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #8e8e8e;
 }
 
 .video-container {
@@ -64,7 +64,7 @@ body {
 }
 
 .overlay-text {
-    position: absolute;
+    position: sticky;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -74,12 +74,11 @@ body {
     z-index: 3;
 }
 
-.text-big {
-    font-size: 120px;
+.text-fade {
     transition: opacity 2s ease-in-out; /* Transizione fluida */
 }
 
-.text-big:hover {
+.text-fade:hover {
     opacity: 0.5; /* Riduce l'opacità al passaggio del mouse */
 }
 
@@ -331,5 +330,151 @@ body {
     /* Video ancora più piccolo */
     #video {
         height: 50vh;
+    }
+}
+
+.floating-circle {
+    width: 150px; /* Puoi aumentare la dimensione se vuoi */
+    height: 150px;
+    border: 2px solid green;
+    border-radius: 50%;
+    position: fixed; /* Fissa il cerchio in posizione, anche quando si scrolla */
+    top: 30%; /* Posizione verticale */
+    left: 50%; /* Posizione orizzontale */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Manda il cerchio dietro il contenuto */
+    animation: float 3s infinite ease-in-out;
+    opacity: 0.5; /* Rendi il cerchio leggermente trasparente per un effetto più elegante */
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-10px); }
+    100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+
+/* Posizioniamo la sezione sopra il video */
+.content {
+    position: absolute;
+    top: 50%; /* Posizionamento verticale sopra il video */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra esattamente la sezione */
+    width: 90%;
+    text-align: center;
+    z-index: 3; /* Assicura che stia sopra il video */
+    background: rgba(0, 0, 0, 0.6); /* Sfondo scuro semi-trasparente per contrasto */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Adattiamo il contenitore delle immagini */
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Modifichiamo lo stile delle immagini */
+.images-container img {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effetto hover per le immagini */
+.images-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* 📱 Responsive: Ottimizziamo per schermi più piccoli */
+@media (max-width: 768px) {
+    .content {
+        top: 60%; /* Abbassiamo leggermente su mobile */
+        width: 95%;
+        padding: 20px;
+    }
+
+    .images-container img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        top: 65%;
+        padding: 15px;
+    }
+
+    .images-container img {
+        width: 100px;
+    }
+}
+
+/* Contenitore immagini con descrizione */
+.image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px; /* Larghezza fissa per ogni elemento */
+    text-align: center;
+}
+
+/* Immagini */
+.images-container img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Testo descrittivo sotto le immagini */
+.image-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff; /* Testo bianco per contrasto */
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Effetto hover per le immagini */
+.image-box:hover img {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive per schermi più piccoli */
+@media (max-width: 768px) {
+    .images-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .image-box {
+        width: 140px;
+    }
+
+    .image-text {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-box {
+        width: 120px;
+    }
+
+    .image-text {
+        font-size: 10px;
     }
 }
